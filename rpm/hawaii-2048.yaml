@@ -1,0 +1,32 @@
+Name       : hawaii-2048
+Version    : 0.0.0.20140329.b459a11
+Release    : 1
+Group      : Applications/System
+License    : GPLv2+
+URL        : https://github.com/mauios/hawaii-2048.git
+Summary    : 2048 game
+Description: |
+    This is a highly addictive game where you use arrow keys to move
+    tiles in a 4x4 grid. When two tiles of the same number touch,
+    they merge into one.
+    
+    If you get a tile with 2048 you win!
+Sources    : 
+    - hawaii-2048-%{version}.tar.xz
+
+Configure  : cmake 
+ConfigOptions: 
+    - -DCMAKE_BUILD_TYPE=RelWithDebInfo 
+
+PkgConfigBR:
+    - Qt5Core
+    - Qt5Gui
+    - Qt5Qml
+    - Qt5Quick
+
+PkgBR:
+    - cmake
+
+Files:  
+   - "%{_bindir}/hawaii-2048"
+   - "%{_datadir}/hawaii-2048/styles/*"
